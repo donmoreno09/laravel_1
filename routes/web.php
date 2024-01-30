@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $tasks = [
+        'Go to the store',
+        'Clean the house',
+        'Finish the screencast'
+    ];
+
+
+    return view('welcome', compact('tasks'));
 });
 
 Route::get('about', function(){
