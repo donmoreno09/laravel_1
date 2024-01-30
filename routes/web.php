@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,15 @@ Route::get('/', function () {
 
 
     return view('welcome', compact('tasks'));
+});
+
+Route::get('datiDaDB', function () {
+
+    $tasks = DB::table('tasks')->get();
+
+    return $tasks;
+
+    //return view('datiDaDB', compact('tasks'));
 });
 
 Route::get('about', function(){
